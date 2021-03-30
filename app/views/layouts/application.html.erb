@@ -11,13 +11,19 @@
   </head>
 
   <body>
-
-  <%= render "shared/header" %>
+  <% if @user.present? %>
+    <%= render "shared/header" %>
+  <% end %>
   <%= render "shared/flash_messages" %>
-  <div class="container">
+  <% if root_path %>
     <%= yield %>
-  </div>
-  <%= render "shared/footer"  %>
-
+  <% else %>
+    <div class="container">
+      <%= yield %>
+    </div>
+  <% end %>
+  <% if @user.present? %>
+    <%= render "shared/footer"  %>
+  <% end %>
   </body>
 </html>
