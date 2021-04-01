@@ -16,6 +16,9 @@ Rails.application.routes.draw do
   # end
   root 'home#landing_page'
 
+  get 'home/superadmin_home'
+  get 'home/supervisor_home'
+
   devise_for :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   match "/404", to: "errors#not_found", via: :all

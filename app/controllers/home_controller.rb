@@ -11,8 +11,16 @@ class HomeController < ApplicationController
   end
 
   def index
+    if current_user.superadmin_role
+      render 'superadmin_home'
+    elsif current_user.supervisor_role
+      render 'supervisor_home'
+    end
 
   end
 
+  def superadmin_home; end
+
+  def supervisor_home; end
 
 end
