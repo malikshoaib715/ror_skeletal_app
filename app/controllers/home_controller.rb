@@ -5,9 +5,13 @@ class HomeController < ApplicationController
 
 
   def landing_page
+    # if current_user.signed_in?
+    #   render 'index'
+    # end
   end
 
   def index
+
   end
 
 
