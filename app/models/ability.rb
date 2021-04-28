@@ -7,8 +7,13 @@ class Ability
     # Define abilities for the passed in user here. For example:
     #
       user ||= User.new # guest user (not logged in)
-    #can :manage, :all   #temporary access, will be removed after adding users with their roles
-      if user.superadmin_role?
+    #
+    # can :manage, :all   #temporary access, will be removed after adding users with their roles
+    # can :access, :rails_admin
+    # can :manage, :dashboard
+
+
+    if user.superadmin_role?
         can :manage, :all
         can :access, :rails_admin
         can :manage, :dashboard
@@ -16,6 +21,9 @@ class Ability
       if user.supervisor_role?
         can :manage, User
       end
+
+
+
       # else
       #   can :read, :all
       # end

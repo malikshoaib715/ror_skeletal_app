@@ -32,7 +32,12 @@ gem 'xpath'
 gem 'bindex'
 gem 'backport'
 gem 'regexp_parser'
+gem 'jquery-rails'
 gem 'sprockets'
+
+
+gem 'load_and_authorize_resource'
+
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

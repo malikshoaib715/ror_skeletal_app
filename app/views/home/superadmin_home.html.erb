@@ -2,3 +2,4 @@ You are Signed_in as <%= current_user.email %>
 <h1>This is the SuperAdmin's Home Page</h1></br>
 <%= link_to "logout", destroy_user_session_path, method: :delete, class: "btn btn-primary"  %>
 <%= link_to "Manage Users", rails_admin_path, class: "btn btn-primary"  %>
+<%= link_to "Supervisor's Home", home_supervisor_home_path, class: "btn btn-primary"  %>

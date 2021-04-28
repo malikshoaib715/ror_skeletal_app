@@ -136,6 +136,8 @@ GEM
     listen (3.5.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
+    load_and_authorize_resource (0.4.1)
+      rails (>= 4.0)
     loofah (2.9.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -288,8 +290,10 @@ DEPENDENCIES
   devise
   dotenv-rails
   jbuilder (~> 2.7)
+  jquery-rails
   letter_opener_web
   listen (~> 3.3)
+  load_and_authorize_resource
   pg
   public_suffix
   puma (~> 5.0)
@@ -314,4 +318,4 @@ RUBY VERSION
    ruby 3.0.0p0
 
 BUNDLED WITH
-   2.2.11
+   2.2.15
