@@ -32,9 +32,9 @@ gem 'xpath'
 gem 'bindex'
 gem 'backport'
 gem 'regexp_parser'
-gem 'jquery-rails'
+gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
 gem 'sprockets'
-
+gem 'jquery-ui-rails'
 
 gem 'load_and_authorize_resource'
 

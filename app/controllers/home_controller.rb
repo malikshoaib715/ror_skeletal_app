@@ -17,8 +17,12 @@ class HomeController < ApplicationController
   def superadmin_home; end
 
   def supervisor_home
+    @reports = Report.all
     respond_to do |format|
       format.js {render 'home/reports.js.erb'} # Add this line to you respond_to block
+      format.html
+      format.csv {send_data Report.to_csv, filename: "report.csv"}
+      format.xls {send_data Report.to_csv, filename: "report.xls"}
     end
 
 
