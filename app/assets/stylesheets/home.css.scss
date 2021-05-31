@@ -2,12 +2,14 @@
 //// They will automatically be included in application.css.
 //// You can use Sass (SCSS) here: https://sass-lang.com/
 //
+
+
 body {
   font-family: "Lato", sans-serif;
 }
-.table thead th {
-  width: 230px;
-}
+//.table thead th {
+//  width: 230px;
+//}
 .sidenav {
   height: 100%;
   width: 160px;
@@ -64,6 +66,43 @@ body {
   color:#000;
 }
 
+.paginate_button.active .page-link {
+  background-color: grey !important;
+  border: 2px solid red !important;
+}
+
+.dataTable thead {
+  background-color: lightblue;
+}
+.btn-primary{
+  background-color: darkblue;
+}
+
+
+
+
+
+
+
+.dataTables_wrapper .dataTables_filter {
+  right: 100px;
+  position: relative;
+}
+.dataTables_wrapper .dataTables_length {
+  left: 100px;
+  position: relative;
+}
+
+.dataTables_wrapper .dataTables_info {
+  left: 50px;
+  position: relative;
+  font-weight: bold;
+}
+
+.dataTables_wrapper .dataTables_paginate {
+  right: 50px;
+  position: relative;
+}
 
 
 
@@ -76,9 +115,53 @@ body {
 
 
 
-
-
-
+//
+//
+//
+//
+//.ex_highlight #user_table tbody tr.even:hover, #user_table tbody tr.even td.highlighted {
+//  background-color: #eed7b0;
+//}
+//
+//.ex_highlight #user_table tbody tr.odd:hover, #user_table tbody tr.odd td.highlighted {
+//  background-color: #eed7b0;
+//}
+//
+//.ex_highlight_row #user_table tr.even:hover {
+//  background-color: #eed7b0;
+//}
+//
+//.ex_highlight_row #user_table tr.even:hover td.sorting_1 {
+//  background-color: #eed7b0;
+//}
+//
+//.ex_highlight_row #user_table tr.even:hover td.sorting_2 {
+//  background-color: #eed7b0;
+//}
+//
+//.ex_highlight_row #user_table tr.even:hover td.sorting_3 {
+//  background-color: #eed7b0;
+//}
+//
+//.ex_highlight_row #user_table tr.odd:hover {
+//  background-color: #eed7b0;
+//}
+//
+//.ex_highlight_row #user_table tr.odd:hover td.sorting_1 {
+//  background-color: #eed7b0;
+//}
+//
+//.ex_highlight_row #user_table tr.odd:hover td.sorting_2 {
+//  background-color: #eed7b0;
+//}
+//
+//.ex_highlight_row #user_table tr.odd:hover td.sorting_3 {
+//  background-color: #eed7b0;
+//}
+//
+//
+//
+//
 
 //
 //

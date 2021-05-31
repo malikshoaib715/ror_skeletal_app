@@ -23,3 +23,4 @@ global.$ = jQuery
 
 require('datatables.net-bs4')
 
+
