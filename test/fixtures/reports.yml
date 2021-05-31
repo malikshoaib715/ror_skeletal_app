@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  column1: MyString
+  column2: MyString
+  column3: MyString
+  column4: MyString
+  column5: MyString
+  column6: 
+  column7: 1
+  column8: 1
+  column9: 2021-04-29 22:32:02
+  column: 2021-04-29 22:32:02
+
+two:
+  column1: MyString
+  column2: MyString
+  column3: MyString
+  column4: MyString
+  column5: MyString
+  column6: 
+  column7: 1
+  column8: 1
+  column9: 2021-04-29 22:32:02
+  column: 2021-04-29 22:32:02
