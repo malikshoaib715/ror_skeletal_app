@@ -1,9 +1,12 @@
 
-<%= link_to "CSV", home_supervisor_home_reports_path(format: :csv), class: "btn btn-primary" %>
-<%= link_to "Excel", home_supervisor_home_reports_path(format: :xls), class: "btn btn-primary" %>
+<!--<link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css ">-->
+<div class="container d-flex justify-content-center align-items-center">
+  <%= link_to "CSV", home_supervisor_home_reports_path(format: :csv), class: "btn btn-primary px-4 mr-2" %>
+  <%= link_to "Excel", home_supervisor_home_reports_path(format: :xls), class: "btn btn-primary px-4" %>
+ </div>
+<div class="container ">
+  <table id="user_table" class=" table table-bordered dt-responsive nowrap hover order-column row-border" style="width: 100%" >
 
-<div class="container">
-  <table id="user_table" class="table table-striped table-bordered display compact" >
 <!--    <thead>-->
 <!--      <th scope="row" style="width: 200px">-->
 <!--        <div class="input-group flex-row d-flex">-->
@@ -61,6 +64,7 @@
 <!--        </div>-->
 <!--      </th>-->
 <!--    </thead>-->
+
     <thead style="text-align: center">
       <th>Column 1</th>
       <th>Column 2</th>
@@ -96,6 +100,8 @@
 
 <script type="text/javascript">
     $(document).ready(function() {
-        $('#user_table').DataTable();
+          $('#user_table').DataTable();
     });
+
+
 </script>

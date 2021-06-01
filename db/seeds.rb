@@ -5,6 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
 50.times do |i|
   Report.create(column1:"Row #{i} Data",column2:"Row #{i} Data",column3:"Row #{i} Data",column4:"Row #{i} Data",column5:"Row #{i} Data",column6:"#{i}",column7:"#{i}",column8:"#{i}", status:"#{rand(0..1)}",)
+
 end
