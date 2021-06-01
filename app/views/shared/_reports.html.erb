@@ -1,12 +1,69 @@
 
-
 <!--<link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css ">-->
 <div class="container d-flex justify-content-center align-items-center">
-  <%= link_to "CSV", home_supervisor_home_path(format: :csv), class: "btn btn-primary px-4 mr-2" %>
-  <%= link_to "Excel", home_supervisor_home_path(format: :xls), class: "btn px-4 btn-primary" %>
-</div>
+  <%= link_to "CSV", home_supervisor_home_reports_path(format: :csv), class: "btn btn-primary px-4 mr-2" %>
+  <%= link_to "Excel", home_supervisor_home_reports_path(format: :xls), class: "btn btn-primary px-4" %>
+ </div>
 <div class="container ">
   <table id="user_table" class=" table table-bordered dt-responsive nowrap hover order-column row-border" style="width: 100%" >
+
+<!--    <thead>-->
+<!--      <th scope="row" style="width: 200px">-->
+<!--        <div class="input-group flex-row d-flex">-->
+<!--          <div class="form-outline flex-row d-flex">-->
+<!--            <input type="search" id="form1" class="form-control" />-->
+<!--            <button type="button" class="btn btn-primary">-->
+<!--              <i class="fa fa-search" aria-hidden="true"></i>-->
+<!--            </button>-->
+<!--          </div>-->
+
+<!--        </div>-->
+<!--      </th>-->
+<!--      <th scope="row">-->
+<!--        <div class="input-group">-->
+<!--          <div class="form-outline">-->
+<!--            <input type="search" id="form1" class="form-control" />-->
+<!--            <label class="form-label" for="form1">Search</label>-->
+<!--          </div>-->
+<!--          <button type="button" class="btn btn-primary">-->
+<!--            <i class="fa fa-search" aria-hidden="true"></i>-->
+<!--          </button>-->
+<!--        </div>-->
+<!--      </th>-->
+<!--      <th scope="row">-->
+<!--        <div class="input-group">-->
+<!--          <div class="form-outline">-->
+<!--            <input type="search" id="form1" class="form-control" />-->
+<!--            <label class="form-label" for="form1">Search</label>-->
+<!--          </div>-->
+<!--          <button type="button" class="btn btn-primary">-->
+<!--            <i class="fa fa-search" aria-hidden="true"></i>-->
+<!--          </button>-->
+<!--        </div>-->
+<!--      </th>-->
+<!--      <th scope="row">-->
+<!--        <div class="input-group">-->
+<!--          <div class="form-outline">-->
+<!--            <input type="search" id="form1" class="form-control" />-->
+<!--            <label class="form-label" for="form1">Search</label>-->
+<!--          </div>-->
+<!--          <button type="button" class="btn btn-primary">-->
+<!--            <i class="fa fa-search" aria-hidden="true"></i>-->
+<!--          </button>-->
+<!--        </div>-->
+<!--      </th>-->
+<!--      <th scope="row">-->
+<!--        <div class="input-group">-->
+<!--          <div class="form-outline">-->
+<!--            <input type="search" id="form1" class="form-control" />-->
+<!--            <label class="form-label" for="form1">Search</label>-->
+<!--          </div>-->
+<!--          <button type="button" class="btn btn-primary">-->
+<!--            <i class="fa fa-search" aria-hidden="true"></i>-->
+<!--          </button>-->
+<!--        </div>-->
+<!--      </th>-->
+<!--    </thead>-->
 
     <thead style="text-align: center">
       <th>Column 1</th>
@@ -19,6 +76,7 @@
       <th>Column 8</th>
       <th>Column 9</th>
       <th>Column 10</th>
+      <th>Status</th>
     </thead>
     <tbody>
     <% @reports.each do |reports| %>
@@ -33,9 +91,7 @@
         <td style="text-align: right"><%= reports.column8  %></td>
         <td><%= reports.created_at  %></td>
         <td><%= reports.updated_at  %></td>
-
-
-
+        <td><%= reports.status %></td>
       </tr>
     <% end %>
   </tbody>
