@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
   get 'home/superadmin_home'
   get 'home/supervisor_home'
+  get 'home/supervisor_home_reports'
+  get 'home/supervisor_home_charts'
   # get 'home/reports'
   # get 'home/charts'
 
