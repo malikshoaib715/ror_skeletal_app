@@ -1,5 +1,38 @@
-You are Signed_in as <%= current_user.email %>
-<h1>This is the SuperAdmin's Home Page</h1></br>
-<%= link_to "logout", destroy_user_session_path, method: :delete, class: "btn btn-primary"  %>
-<%= link_to "Manage Users", rails_admin_path, class: "btn btn-primary"  %>
-<%= link_to "Supervisor's Home", home_supervisor_home_path, class: "btn btn-primary"  %>
+<!--You are Signed_in as <%#= current_user.email %>-->
+<!--<h1>This is the SuperAdmin's Home Page</h1></br>-->
+<%#= link_to "logout", destroy_user_session_path, method: :delete, class: "btn btn-primary"  %>
+<%#= link_to "Manage Users", rails_admin_path, class: "btn btn-primary"  %>
+<%#= link_to "Supervisor's Home", home_supervisor_home_path, class: "btn btn-primary"  %>
+
+<nav class='breadcrumb is-centered is-large has-arrow-separator' aria-label='breadcrumbs'>
+  <ul>
+    <li class='is-active'>
+      <a href='#' aria-current='page'>
+        <span class='icon is-small'>
+          <i class='fa fa-home' aria-hidden='true'></i>
+        </span>
+        <span>Home</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<section class="section">
+  <%= link_to 'Create New Quiz', new_quiz_path, class: 'button is-primary is-fullwidth is-large is-outlined block' %>
+
+  <div class='columns is-multiline is-mobile'>
+    <% current_user.quizzes.each do |quiz| %>
+      <div class='card column is-half block'>
+        <header class='card-header'>
+          <%= link_to quiz.name, edit_quiz_path(quiz.id),
+                      class: 'button is-info is-fullwidth is-large is-outlined' %>
+        </header>
+        <div class='card-content'>
+          <p class='content'>
+            <%= quiz.description %>
+          </p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</section>

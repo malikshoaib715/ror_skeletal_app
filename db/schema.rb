@@ -10,10 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_31_070849) do
+ActiveRecord::Schema.define(version: 2021_06_02_153850) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "answers", force: :cascade do |t|
+    t.bigint "question_id", null: false
+    t.string "text"
+    t.boolean "is_true"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["question_id"], name: "index_answers_on_question_id"
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.bigint "quiz_id", null: false
+    t.string "text"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["quiz_id"], name: "index_questions_on_quiz_id"
+  end
+
+  create_table "quizzes", force: :cascade do |t|
+    t.string "name"
+    t.bigint "user_id", null: false
+    t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_quizzes_on_user_id"
+  end
 
   create_table "reports", force: :cascade do |t|
     t.string "column1"
@@ -31,6 +57,16 @@ ActiveRecord::Schema.define(version: 2021_05_31_070849) do
     t.boolean "status"
   end
 
+  create_table "results", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "quiz_id", null: false
+    t.integer "result"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["quiz_id"], name: "index_results_on_quiz_id"
+    t.index ["user_id"], name: "index_results_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -46,8 +82,16 @@ ActiveRecord::Schema.define(version: 2021_05_31_070849) do
     t.boolean "superadmin_role", default: false
     t.boolean "supervisor_role", default: false
     t.boolean "user_role", default: true
+    t.string "user_name"
+    t.string "first_name"
+    t.string "last_name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "answers", "questions"
+  add_foreign_key "questions", "quizzes"
+  add_foreign_key "quizzes", "users"
+  add_foreign_key "results", "quizzes"
+  add_foreign_key "results", "users"
 end

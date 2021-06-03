@@ -37,7 +37,7 @@ gem 'sprockets'
 gem 'jquery-ui-rails'
 gem "chartkick"
 
-gem 'load_and_authorize_resource'
+# gem 'load_and_authorize_resource'
 
 
 # Use Active Storage variant

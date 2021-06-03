@@ -1,12 +1,13 @@
 class HomeController < ApplicationController
+
   before_action :authenticate_user!, except: [:landing_page]
-  load_and_authorize_resource
+  # load_and_authorize_resource
 
-
-
-  def landing_page; end
+  def landing_page
+  end
 
   def index
+    @quizzes = Quiz.all
     if current_user.superadmin_role
       render 'superadmin_home'
     elsif current_user.supervisor_role
@@ -14,7 +15,9 @@ class HomeController < ApplicationController
     end
   end
 
-  def superadmin_home; end
+  def superadmin_home
+    @quizzes = Quiz.all
+  end
 
   def supervisor_home
 

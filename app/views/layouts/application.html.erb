@@ -24,17 +24,56 @@
 
   <body>
 
-    <% if @user.present? %>
-      <%= render "shared/header" %>
-    <% end %>
-    <%= render "shared/flash_messages" %>
-    <% if root_path %>
-      <%= yield %>
-    <% end %>
+    <%# if @user.present? %>
+      <%#= render "shared/header" %>
+    <%# end %>
+    <%#= render "shared/flash_messages" %>
+    <%# if root_path %>
+      <%#= yield %>
+    <%# end %>
 
-    <% if @user.present? %>
-      <%= render "shared/footer"  %>
-    <% end %>
+    <%# if @user.present? %>
+      <%#= render "shared/footer"  %>
+    <%# end %>
 
+
+
+
+
+<!--    Quiz app view-->
+
+
+    <nav class='navbar is-fixed-top is-primary' role='navigation' aria-label='main navigation'>
+      <div class='navbar-start'>
+        <div class='buttons'>
+          <%= link_to 'HOME', root_path, class: 'button is-light' %>
+        </div>
+      </div>
+      <div class='navbar-end'>
+        <div class='navbar-item'>
+          <div class='buttons'>
+            <% if user_signed_in? %>
+              <%= link_to 'Log Out', destroy_user_session_path, method: :delete, class: 'button is-danger' %>
+            <% else %>
+              <%= link_to 'Sign Up', new_user_registration_path, class: 'button is-light' %>
+              <%= link_to 'Log In', new_user_session_path, class: 'button is-light' %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <% if notice %>
+    <div class='notice notification is-success'>
+      <button class='delete'></button>
+      <%= notice %>
+    </div>
+  <% end %>
+  <% if alert %>
+    <div class='alert notification is-danger'>
+      <button class='delete'></button>
+      <%= alert %>
+    </div>
+  <% end %>
+  <%= yield %>
   </body>
 </html>

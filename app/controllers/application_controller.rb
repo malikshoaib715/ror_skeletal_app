@@ -1,7 +1,11 @@
 class ApplicationController < ActionController::Base
   before_action :store_user_location!, if: :storable_location?
-  include LoadAndAuthorizeResource
+  # include LoadAndAuthorizeResource
 
+  rescue_from CanCan::AccessDenied do |exception|
+
+    redirect_to home_index_path, :alert => exception.message
+  end
 
   protected
 

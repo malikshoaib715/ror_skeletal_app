@@ -15,13 +15,19 @@ Rails.application.routes.draw do
   #   root to: 'home#index'
   # end
   root 'home#landing_page'
-
+  resources :quizzes
   get 'home/superadmin_home'
   get 'home/supervisor_home'
   get 'home/supervisor_home_reports'
   get 'home/supervisor_home_charts'
   # get 'home/reports'
   # get 'home/charts'
+
+  #Quizzes Routes
+  get 'quizzes/index'
+  get 'quizzes/show_answer/:question_id', to: 'quizzes#show_answer', as: 'show_answer'
+  post 'quizzes/random', to: 'quizzes#choose_random', as: 'choose_random'
+
 
   devise_for :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
