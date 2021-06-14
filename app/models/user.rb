@@ -5,6 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :confirmable
 
   has_many :quizzes
+  has_many :results
+  has_many :quizzes, through: :results
 
   has_one_attached :avatar do |attachable|
     attachable.variant :thumb, resize: '100x100'

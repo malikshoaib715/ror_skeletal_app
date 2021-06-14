@@ -35,8 +35,8 @@
       </div>
     </div>
 
-    <%= f.hidden_field :user_id, value: current_user.id %>
 
+    <%= f.hidden_field :user_id, value: current_user.id %>
     <div class='container'>
       <h2>Question</h2>
       <%= f.fields_for :questions do |question| %>
@@ -70,7 +70,15 @@
       <% end %>
     </div>
 
+
+    <%#= render "add_question_form" %>
+
     <div class='field'>
+      <%#= link_to 'Add Question', add_another_question_path, class: 'button is-primary is-fullwidth is-large is-outlined block' %>
+
+      <%#= f.submit 'Add Question', class: 'button is-info is-fullwidth' %>
+      <%#= link_to 'Create Quiz', root_path, class: 'button is-info is-fullwidth' %>
+
       <%= f.submit class: 'button is-info is-fullwidth' %>
     </div>
   <% end %>

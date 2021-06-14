@@ -26,8 +26,9 @@ Rails.application.routes.draw do
   #Quizzes Routes
   get 'quizzes/index'
   get 'quizzes/show_answer/:question_id', to: 'quizzes#show_answer', as: 'show_answer'
+  get 'quizzes/choose_answer/:question_id', to: 'quizzes#choose_answer', as: 'choose_answer'
   post 'quizzes/random', to: 'quizzes#choose_random', as: 'choose_random'
-
+  get 'quizzes/add_another_question'
 
   devise_for :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

@@ -62,7 +62,7 @@
         </div>
       </div>
     </nav>
-    <% if notice %>
+  <% if notice %>
     <div class='notice notification is-success'>
       <button class='delete'></button>
       <%= notice %>
@@ -74,6 +74,8 @@
       <%= alert %>
     </div>
   <% end %>
+
   <%= yield %>
+
   </body>
 </html>

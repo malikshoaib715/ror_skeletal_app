@@ -1,0 +1,39 @@
+if (typeof variable === 'undefined') {
+    let button = undefined
+}
+
+
+questiontext = document.getElementById("quiz-question");
+questiontext.classList.remove('fa', 'fa-check');
+<% if @choosenanswer.answer.is_true %>
+  document.getElementById("quiz_tick").innerHTML = "&#10004 " ;
+//questiontext.classList.add('fa', 'fa-check');
+<% else %>
+  document.getElementById("quiz_tick").innerHTML = "&#10006 " ;
+//questiontext.classList.add('fas', 'fa-times')
+<% end %>
+
+
+
+<% @question.answers.each do |answer| %>
+button = document.getElementById('quiz-answer-<%= answer.id %>');
+//questiontext = document.getElementById('quiz_answer-<%#=  %>)
+button.classList.remove('is-info');
+<% if answer.is_true %>
+button.classList.add('is-success')
+
+<% else %>
+button.classList.add('is-danger')
+<% end %>
+<% end %>
+
+
+
+setTimeout(() => {
+    document.querySelectorAll('.quiz-answer').forEach(elem => {
+        elem.classList.remove('is-success');
+        elem.classList.remove('is-danger');
+        elem.classList.add('is-info');
+        document.getElementById("quiz_tick").innerHTML = "" ;
+    });
+}, 2000);

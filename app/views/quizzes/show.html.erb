@@ -33,15 +33,16 @@
     <div class='modal-background'></div>
     <div class='modal-card'>
       <header class='modal-card-head'>
-        <p class="modal-card-title"><%= question.text %></p>
+        <p class="modal-card-title", id="quiz-question"><span id="quiz_tick"></span><%= question.text %></p>
       </header>
       <section class="modal-card-body">
         <div class='columns is-multiline is-mobile is-10'>
           <% question.answers.each do |answer| %>
             <div class='column is-half'>
-              <button id='quiz-answer-<%= answer.id %>' class='button is-info is-large is-fullwidth quiz-answer'>
-                <%= answer.text %>
-              </button>
+              <%= link_to "#{answer.text}", choose_answer_path(question_id: question.id, answer_id: answer.id), class: 'button is-info is-large is-fullwidth quiz-answer', id: "quiz-answer-#{ answer.id}", remote: true %>
+<!--              <button id='quiz-answer-<%#= answer.id %>' class='button is-info is-large is-fullwidth quiz-answer'>-->
+                <%#= answer.text %>
+<!--              </button>-->
             </div>
           <% end %>
         </div>
